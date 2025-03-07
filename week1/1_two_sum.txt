@@ -1,0 +1,8 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        hash_map = {}  # 使用字典存儲數字對應的索引
+        for i, num in enumerate(nums):
+            complement = target - num  # 需要的數字
+            if complement in hash_map:
+                return [hash_map[complement], i]  # 找到解
+            hash_map[num] = i  # 存入當前數字及其索引
